@@ -1,38 +1,29 @@
 #include <stdio.h>
-#include <math.h>
 
-int main()
- {
-    int n;
-    int i = 2;
+int main() 
+{
+    int n, i, x = 0;
+    printf("Podaj liczbe: ");
+    scanf("%d", &n);
 
-    printf("Podaj liczbe naturalna: ");
-    scanf("%d",&n);
+    for (i = 2; i <= n / 2; ++i) {
 
-    while(n>2)
-    {
-        i +=1; 
-
-        if(n%n == 0 && n%1 == 0 && n%i!=0)
-        {
-            printf("Podana liczba jest licza pierwsza.\n");
+        // warunek na zlozona liczbe
+        if (n % i == 0) {
+            x = 1;
             break;
         }
+    }
+
+    if (n == 1) {
+        printf("Nie jest to liczba pierwsza");
+    }
+    else {
+        if (x == 0)
+            printf("%d jest liczba pierwsza.", n);
         else
-        {
-            printf("Podana liczba nie jest licza pierwsza.\n");
-            break;
-        }
-        
-        
+            printf("%d nie jest liczba piersza.", n);
     }
 
-    if(n==0 || n==1 || n==2)
-    {
-        printf("Podana liczba nie jest licza pierwsza.\n");
-    }
-
-
-  printf("\n");  
-  return 0;
+    return 0;
 }
