@@ -34,9 +34,7 @@ int main()
         printf("Podaj dodatnia liczbe calkowita\n");
         scanf("%d",&i);
     }
-    while(i>=0);
-
-    printf("To nie jest liczba calkowita\n Uruchom ponownie program\n");
+    while(i<=0);
 
     return 0;
 
