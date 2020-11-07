@@ -3,8 +3,8 @@
   
 int main() 
 { 
-    int n, i, j;
-    printf("Podaj liczbę naturalną: ");
+    int n, i, j, licznik = 0;
+    printf("Podaj liczbe naturalna: ");
     scanf("%d", &n);
     
     
@@ -13,13 +13,22 @@ int main()
         for (j = 1; j * j <= n; j++) {
 
             if ((i*i+j*j) == n){ 
-                printf("Jest to mozliwe.\n");
-            }  
+                licznik += 1;
+            } 
+            else{
+                licznik = 0;
+            } 
         } 
-
-        printf("Nie jest to mozliwe.\n");
         
     }
+
+    if(licznik>0)
+        printf("Podana liczbe mozna uzyskac jako sume dwoch kwadratow.");
+    else
+    {
+        printf("Podana liczbe nie mozna uzyskac jako sume dwoch kwadratow.");
+    }
+    
 
     return 0;
 } 
