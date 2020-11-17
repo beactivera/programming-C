@@ -4,6 +4,8 @@
 
 int main()
 {
+    int n, licznik = 0;
+
 	/***** LOSOWANIE TABLICY ******/
 	srand( time( NULL ) );      // inicjalizacja generatora liczb pseudolosowych
 	int tab[20];                // deklaracja tablicy
@@ -12,7 +14,19 @@ int main()
 		 tab[i] = tab[i-1] + rand() % 3;   // 'wylosuj' liczbe z zakresu 0...2 i dodaj do poprzedniego elementu
 	
 	/***** Tutaj umieść rozwiązanie zadania ******/    
-	
+	printf("Podaj szukaną liczbę: ");
+    scanf("%d", &n);
+
+    for(int i=0; i<20; i++){
+        if(n == tab[i])
+            licznik++;
+    }
+    
+    if(licznik>=1)
+        printf("Szukana liczba %d znajduje sie w tablicy.\n",n);
+    else
+        printf("Szukana liczba %d NIE znajduje sie w tablicy.\n",n);
+
 	
 	/***** WYŚWIETLENIE ZAWARTOŚCI TABLICY ******/    
 	printf("tab = [");
