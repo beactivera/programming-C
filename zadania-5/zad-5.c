@@ -23,12 +23,15 @@ int main()
 		 printf("%d, ", tab[i]);
 	printf("%d]\n", tab[n-1]);
 
+    for (int i=0; i<n; i++)
+    {
+        tab_odwr[i] = tab[n-1-i];
+    }
+
     printf("Twoja ODWROCONA tablica: [");
-	for (int i=n-1; i>0; i--)
-         printf("%d, ", tab_odwr[i] = tab[i]);
-    
-    printf("%d]\n", tab_odwr[n]);
-    
+	for (int i=0; i<n-1; i++)
+		 printf("%d, ", tab_odwr[i]);
+	printf("%d]\n", tab_odwr[n-1]);
 
     return 0;
 }
