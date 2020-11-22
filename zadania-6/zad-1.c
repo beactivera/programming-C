@@ -25,7 +25,7 @@ int main()
 
     /***** Tutaj umieść rozwiązanie zadania ******/
     maximum  = tab[19];
-    minimum = tab[0];    
+    minimum = tab[0];
     mean = find_mean(tab, 20);
 
     printf("Maksymalny element na pozycji %d ma wartosc %d.\n", 20 , maximum);
@@ -47,5 +47,12 @@ int find_mean(int a[], int n) {
   return avg;
 }
 
-// Zadanie różni się od poprzedniego z ostatnich zajęć tym, że mieliśmy listę nieporządkowaną.
-// Więc żeby odnaleźć maximum i minimum musieliśmy najpierw odnaleźć pozycję na której znajduje się dana wartość.
+// Ile operacji jest potrzebnych przy wyznaczaniu wartości minimalnej i maksymalnej dla tablicy uporządkowanej i nieuporządkowanej?
+/* Odp. Dla tablicy uporządkowanej wartość minimalna jest pierwszym elementem, a wartość maksymalna jest ostatnim elementem tej tablicy. 
+    Więc wykonujemy w sumie dwie operacje.
+    Natomiast dla tablicy nieuporządkowanej musimy sprawdzić każdy element tablicy, aby się dowiedzieć, który element ma wartość minimalna, a który maksymalną.
+    Więc ilość operacji jest równa 2 razy ilości elementów w tablicy o długości 'n', ponieważ musimy sprawdzić max, potem min. */ 
+// Ile operacji jest potrzebnych przy wyznaczaniu wartości średniej dla tablicy uporządkowanej i nieuporządkowanej?
+/* Odp. Ilość operacji będzie ta sama, ponieważ sumujemy wszystkie elementy tablicy i dzielimy przez ilość elementów. 
+    W sumie dwie oparacja dla obu tablic.
+*/
