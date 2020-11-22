@@ -17,14 +17,14 @@ int main()
     printf("Podaj szukaną liczbę: ");
     scanf("%d", &n);
     
-    for(int i=0; i<19; i++){
+    for(int i=0; i<20; i++){
         
         if(n == tab[i])
             licz_rowne++;
         if(n > tab[i])
-            licz_wiecej++;
-        if(n < tab[i])
             licz_mniej++;
+        if(n < tab[i])
+            licz_wiecej++;
     }
 
     printf("Liczba ta występuje %d razy, jest %d liczb wiekszych od niej i %d liczb mniejszych od niej.\n",licz_rowne, licz_wiecej,licz_mniej);
