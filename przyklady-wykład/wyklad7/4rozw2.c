@@ -1,0 +1,24 @@
+#include<stdio.h>
+ 
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a[n];    
+    for (int i=0; i<n; i++)
+        scanf("%d",&a[i]);        
+        
+    int max = 0;    
+    for (int pocz=0; pocz<n; pocz++)
+    {
+        int suma=0;
+        for (int kon=pocz; kon<n; kon++)
+        {
+            suma+=a[kon];
+            if (suma>max)
+               max = suma;
+        }
+    }
+    printf("%d\n",max);
+    return 0;
+}
