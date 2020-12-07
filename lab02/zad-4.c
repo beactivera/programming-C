@@ -20,11 +20,14 @@ int main()
         double x_0 = -1.0*b/(2.0*a);
         printf("x_0: %lf", x_0);
     }
-    else {
+    else if (delta > 0) {
             double x_1 = (-b-sqrt(delta))/(2.0*a);
             double x_2 = (-b+sqrt(delta))/(2.0*a);
-            printf("x_1: %.4lf, x_2: %.4lf", x_1, x_2);
-        }
+            printf("x_1: %.2lf, x_2: %.2lf", x_1, x_2);
+    }
+    else{
+        printf("Funkcja nie ma miejsc zerowych.");
+    }
 
     return 0;
 }
