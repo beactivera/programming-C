@@ -3,10 +3,10 @@
 int main()
 {
   printf("Podaj liczbe naturalna: ");
-  int a;
+  float a;
   scanf("%i", &a);
   printf("Podaj druga liczbe naturalna: ");
-  int b;
+  float b;
   scanf("%i", &b);
 
 
@@ -16,7 +16,7 @@ int main()
     else{
         float iloraz;
         iloraz =a/b;
-        printf("iloraz tych liczb wynosi:  %f ", iloraz);
+        printf("iloraz tych liczb wynosi:  %.2f ", iloraz);
     }
 
   return 0;
