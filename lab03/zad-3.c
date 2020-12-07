@@ -22,7 +22,7 @@ int main()
         if (x == 0)
             printf("%d jest liczba pierwsza.", n);
         else
-            printf("%d nie jest liczba piersza.", n);
+            printf("%d nie jest liczba pierwsza.", n);
     }
 
     return 0;
