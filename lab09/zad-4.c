@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 void insert1(int tab[], int pozycja);
-void insert2(int* tab, int pozycja);
+void insert2(int* tab, int* pozycja);
+void printArray(int tab[], int n);
 
 int main(){
 
@@ -10,35 +11,29 @@ int main(){
     int pozycja = 7;
 
     insert1(tab, pozycja);
+    printArray(tab,11);
     printf("\n");
-    insert2(tab, pozycja);
+    
     // ma być:
- 
     // {​​​​0, 1, 2, 3, 4, 5, 6, 7, 3, 4, 20}​​​​
 
     return 0;
 }
 
 
-
 void insert1(int tab[], int pozycja){
-    int sum = 0;
-    int i;
-
-    for(i=0; i<n; i++){
-        sum += tab[i];
-    }
-
-    return sum;
+    while (tab[pozycja-1]>tab[pozycja]) {
+        int tmp = tab[pozycja];
+        tab[pozycja] = tab[pozycja-1];
+        tab[pozycja-1] = tmp;
+        pozycja--;
+    } 
 }
 
-void insert2( int* tab, int pozycja){
-    int sum = 0;
-    int* pt;
 
-    for(pt = pocz; pt != kon; pt++){
-        sum += *pt;
-    }
-
-    return sum;
-}
+void printArray(int tab[], int n)  
+{    
+    for (int i = 0; i < n; i++)  
+        printf("%d ", tab[i]);
+    printf("\n"); 
+}  
