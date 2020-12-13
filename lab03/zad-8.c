@@ -12,13 +12,15 @@ int main()
     printf("Podaj liczbe naturalna: ");
     scanf("%d",&power);
 
+    int power1 = power;
+
     while(power>0)
     {
         result *= base;
         power --;
         
     }
-    printf("Podana liczba rzeczywista podniesiona do potegi podanej liczby naturalnej daje nam liczbe %.f.\n", result);
+    printf("%d do potegi %d daje nam liczbe %.f.\n", base, power1, result);
 
     return 0;
 }
