@@ -1,3 +1,5 @@
+#define N 20
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -5,7 +7,6 @@
 
 int main(){
 
-    int N = 20;
     int k;
 
     /***** LOSOWANIE TABLICY ******/
