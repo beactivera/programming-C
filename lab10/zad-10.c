@@ -18,13 +18,10 @@ int main()
 
 int NWD(int a, int b)
 {
-    int c;
-    while (b != 0)
-    {
-          c = a % b;
-          a = b;
-          b = c;
-
+    if(b !=0){
+        return NWD(b, a%b);
     }
-    return a;
+    else{
+       return a; 
+    }
 }
