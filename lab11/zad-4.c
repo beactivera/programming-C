@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-int sumaTab(int, int, int, int);
+int sumaTab(int*, int, int, int);
 
 int main() {
 
@@ -22,11 +22,11 @@ int main() {
 
             tab[i][j] = rand() % max_val;
             printf("%d ", tab[i][j]);
-        }
+        } 
         printf("\n");
     }
 
-    int min_sum = max_val;
+    int min_sum = 4*max_val;
     int min_row;
     int min_col;
     for(int i = 0; i < n-1; i++){
@@ -43,5 +43,6 @@ int main() {
     return 0;
 }
 
-int sumaTab(int tab, int row, int col, int m){
-    return (tab+m*row+col) + (tab+m*row+col+1) + (tab+m*(row+1)+col) + (tab+m*(row+1)+col+1);
+int sumaTab(int* tab, int row, int col, int m){
+    return *(tab+m*row+col) + *(tab+m*row+col+1) + *(tab+m*(row+1)+col) + *(tab+m*(row+1)+col+1);
+}
