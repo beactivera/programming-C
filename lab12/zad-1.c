@@ -14,7 +14,7 @@ bool isEmpty(struct STOS*);
 int size(struct STOS*);
 struct STOS create_stack();
 void saveToFile(FILE*, struct STOS*);
-void getFromFile(FILE*, struct STOS*);
+void getFromFile(FILE*);
 
 int main(){
     struct STOS stack = create_stack();
@@ -41,7 +41,7 @@ int main(){
             case 4 : printf("%d\n", isEmpty(&stack)); break;
             case 5 : printf("%d\n", size(&stack)); break;
             case 6 : saveToFile(plik, &stack); break;
-            case 7 : getFromFile(plik, &stack); break;
+            case 7 : getFromFile(plik); break;
             }
         }
         else {
@@ -80,11 +80,17 @@ int size(struct STOS* stos){
 struct STOS create_stack() {
     struct STOS stack;
     stack.ilosc_elementow = 0;
+    FILE* input = fopen("stosy.txt","r");
+    int number;
+    while(fscanf(input, "%d ", &number) == 1) {
+        printf("NUMEREK: %d", number);
+		push(&stack, number);
+	}
+    fclose(input);
     return stack;
 }
 
 void saveToFile(FILE* plik, struct STOS* stos){
-
     plik = fopen("stosy.txt","w");
     int ilosc = stos->ilosc_elementow;
     for(int i=0; i<ilosc; i++){
@@ -93,12 +99,10 @@ void saveToFile(FILE* plik, struct STOS* stos){
    fclose (plik);
 }
 
-void getFromFile(FILE* plik, struct STOS* stos){
+void getFromFile(FILE* plik){
     plik = fopen("stosy.txt", "r");
     int number;
-    int ilosc = stos->ilosc_elementow;
-    for(int i=0; i<ilosc; i++){
-        fscanf(plik,"%d ",&number);
+    while(fscanf(plik, "%d ", &number) == 1) {
         printf("%d ", number);
     }
     printf("\n");
